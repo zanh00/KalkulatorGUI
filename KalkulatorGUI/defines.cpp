@@ -172,9 +172,9 @@ float calculateResult(std::vector<Element> *numbers, std::vector<char> *operator
                     break;   
                 }
                 /*
-                    if neither neighbours have the same priority than decrease priority once again
+                    if neither neighbours have the same priority but at least one of tham has lower priority than decrease priority once again
                 */
-                else
+                else if(numbers->at(highestPriorityIndexes[0] - 1).getPriority() < numbers->at(highestPriorityIndexes[0]).getPriority())
                 {
                     numbers->at(highestPriorityIndexes[0]).decreasePriority();
                 }
